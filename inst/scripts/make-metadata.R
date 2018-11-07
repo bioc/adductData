@@ -1,0 +1,50 @@
+### =========================================================================
+### adductData metadata 
+### -------------------------------------------------------------------------
+###
+
+meta <- data.frame(
+    Title = c(paste0("mzXML for adductomics mass spec for sample ORB35017 ",
+                    "samples from Grigoryan et al, 2016, Anal Chem"),
+            paste0("mzXML for adductomics mass spec for sample ORB35022 ",
+                    "samples from Grigoryan et al, 2016, Anal Chem"),
+            paste0("Rda for adductomics mass spec for sample ORB35017 ",
+                    "samples from Grigoryan et al, 2016, Anal Chem"),
+            paste0("Rda for adductomics mass spec for sample ORB35022 ",
+                    "samples from Grigoryan et al, 2016, Anal Chem")), 
+    Description = c(paste0("mzXML file ",
+                        "for an archived human plasma sample, prepared ",
+                        "using methods from Grigoryan et al, 2016."), 
+                    paste0("mzXML file ",
+                        "for an archived human plasma sample, prepared ",
+                        "using methods from Grigoryan et al, 2016."),
+                    paste0("Rda file ",
+                        "produced for the 2 mzXML files using ",
+                        " adductomicsR::adductQuant()"), 
+                    paste0("Rda file ",
+                        "produced for the 2 mzXML files using ",
+                        " adductomicsR::rtDevModels()")), 
+    BiocVersion = c(rep("3.9", 4)),
+    SourceType = c(rep("mzXML", 2), rep("Rda", 2)), 
+    SourceUrl = "https://www.ncbi.nlm.nih.gov/pubmed/27684351",
+    SourceVersion = "Nov 1 2016",
+    Species = "Homo sapiens",
+    TaxonomyId = 9606,
+    MassSpecInstrument = "LTQ Orbitrap XL HRMS coupled with a Dionex Ultimate",
+    " 3000 nanoflow LC system via a Flex Ion nano-electrospray-ionization ",
+    Mode = "Positive",
+    Maintainer = "Josie Hayes <JLHayes1982@gmail.com>",
+    DispatchClass = c(rep("FilePath",2), rep("Rda",2)),
+    RDataPath = c("adductData/ORB35017raw.mzXML",
+    "adductData/ORB35022raw.mzXML", 
+    "adductData/adductQuantResults.Rda",
+    "adductData/rtDevModels.Rda"),
+    Genome = rep("NA", 4),  
+    Coordinate_1_based = rep("NA", 4),    
+    DataProvider = rep("Grigoryan et al, 2016, Anal Chem", 4),
+    RDataClass = c(rep("mzXML", 2), "adductQuantif", "list"),
+    Tags = "",
+    Notes = c("","")
+)
+
+write.csv(meta, file="inst/extdata/metadata.csv", row.names=FALSE)

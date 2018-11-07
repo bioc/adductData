@@ -1,0 +1,72 @@
+---
+title: "Raw mzXML data using Bioconductor's ExperimentHub"
+author: "Josie Hayes"
+date: '`r format(Sys.Date(), "%B %e, %Y")`'
+output: rmarkdown::html_vignette
+vignette: >
+    %\VignetteIndexEntry{Raw mzXML data using Bioconductor's ExperimentHub}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+---
+
+# Adductomics analysis with Raw mzXML data using Bioconductor's ExperimentHub
+
+Data were produced on a LTQ Orbitrap XL HRMS coupled with a Dionex Ultimate
+3000 nanoflow LC system via a Flex Ion nano-electrospray-ionization source 
+according to methods in Grigoryan et al (Anal Chem. 2016 Nov 1; 
+88(21): 10504–10512.). RAW files were converted to mzXML using ProteoWizard
+msConvert.
+
+```{r, eval=FALSE}
+
+msconvert ORB35017raw.RAW --mzXML
+msconvert ORB35017raw.RAW --mzXML
+
+```
+
+The other files were produced using the package adductomicsR
+```{r, eval=FALSE}
+# load the package
+library(adductomicsR)
+library(adductData)
+```
+
+```{r, echo=FALSE}
+suppressMessages(suppressWarnings(library(adductomicsR)))
+```
+
+rtDevModels.RData can be produced using:
+```{r, quiet=T, eval=FALSE}
+
+rtDevModelling(MS2Dir = system.file("extdata", package = "adductData"), 
+nCores=4, runOrder = paste0(system.file("extdata", package = "adductomicsR"),
+'/runOrder.csv'))
+
+#access the files using ExperimentHub
+library(ExperimentHub)
+eh  = ExperimentHub()
+temp = query(eh, 'adductData')
+temp
+
+```
+
+adductQuantResults.RData can be produced using:
+```{r, quiet=T, eval=FALSE}
+
+adductQuant(nCores=4, targTable=paste0(system.file("extdata", 
+package = "adductomicsR"),'/exampletargTable2.csv'), intStdRtDrift=30, 
+rtDevModels=paste0(system.file("extdata", package = "adductData"),
+'/rtDevModels.RData'),
+filePaths=list.files(system.file("extdata", package = "adductData"),
+    pattern=".mzXML", all.files=FALSE,full.names=TRUE),
+quantObject=NULL,indivAdduct=NULL,maxPpm=5,minSimScore=0.8,spikeScans=1,
+minPeakHeight=100,maxRtDrift=20,maxRtWindow=240,isoWindow=80,
+hkPeptide='LVNEVTEFAK', gaussAlpha=16)
+
+#access the files using ExperimentHub
+library(ExperimentHub)
+eh  = ExperimentHub()
+temp = query(eh, 'adductData')
+temp
+
+```

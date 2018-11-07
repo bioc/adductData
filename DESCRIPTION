@@ -1,0 +1,26 @@
+Package: adductData
+Title: Data from untargeted MS of modifications to Cys34 of serum albumin
+Version: 0.3.3
+Author: Josie Hayes
+Authors@R: c(
+    person("Josie", "Hayes", email="jlhayes1982@gmail.com", 
+    role = c("aut", "cre"))
+    )
+Maintainer: Josie Hayes <jlhayes1982@gmail.com>
+Description: mzXML files from Grigoryan et al 2016 (Anal Chem).
+Depends: R (>= 3.6)
+Imports: ExperimentHub (>= 1.9.0),
+    AnnotationHub (>= 2.13.10),
+	stats (>= 3.5.0),
+	utils (>= 3.5.0),
+	methods (>= 3.5.0),
+	datasets (>= 3.5.0)
+Suggests: knitr (>= 1.15.1),
+    	rmarkdown (>= 1.5)
+License: Artistic-2.0
+LazyData: false
+LazyLoad: false
+Encoding: UTF-8
+RoxygenNote: 6.1.0
+biocViews: ExperimentData,MassSpectrometryData,ExperimentHub
+VignetteBuilder: knitr
