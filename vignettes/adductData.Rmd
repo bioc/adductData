@@ -27,12 +27,7 @@ msconvert ORB35017raw.RAW --mzXML
 The other files were produced using the package adductomicsR
 ```{r, eval=FALSE}
 # load the package
-library(adductomicsR)
 library(adductData)
-```
-
-```{r, echo=FALSE}
-suppressMessages(suppressWarnings(library(adductomicsR)))
 ```
 
 rtDevModels.RData can be produced using:

@@ -10,10 +10,6 @@ that were used to perform adductomics.}
 \source{
 \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5555296/}
 }
-\usage{
-hub <- ExperimentHub::ExperimentHub()
-x <- AnnotationHub::query(hub, "adductData")
-}
 \value{
 2 mzXML files and processed data
 }
