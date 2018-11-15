@@ -2,7 +2,6 @@
 ### adductData metadata 
 ### -------------------------------------------------------------------------
 ###
-
 meta <- data.frame(
     Title = c(paste0("mzXML for adductomics mass spec for sample ORB35017 ",
                     "samples from Grigoryan et al, 2016, Anal Chem"),
@@ -46,5 +45,4 @@ meta <- data.frame(
     Tags = "",
     Notes = c("","")
 )
-
 write.csv(meta, file="inst/extdata/metadata.csv", row.names=FALSE)
