@@ -15,11 +15,11 @@ meta <- data.frame(
                         "and ORB35017 samples from Grigoryan et al, 2016, ",
                         "Anal Chem"),
               paste0("mzXML for adductomics mass spec for sample ",
-                    "data42_21221_2 samples from Grigoryan et al, 2016, Anal"
+                    "data42_21221_2 samples from Grigoryan et al, 2016, Anal",
                     " Chem"),
               paste0("mzXML for adductomics mass spec for sample ",
-                    "data142_23271_2 samples from Grigoryan et al, 2016, Anal"
-                    " Chem"),
+                    "data142_23271_2 samples from Grigoryan et al, 2016, Anal",
+                    " Chem")),
     Description = c(paste0("mzXML file ",
                          "for an archived human plasma sample, prepared ",
                          "using methods from Grigoryan et al, 2016."), 
