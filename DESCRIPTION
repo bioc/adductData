@@ -1,6 +1,6 @@
 Package: adductData
 Title: Data from untargeted MS of modifications to Cys34 of serum albumin
-Version: 1.13.0
+Version: 1.14.0
 Author: Josie Hayes
 Authors@R: c(
     person("Josie", "Hayes", email="jlhayes1982@gmail.com", 
